@@ -1,0 +1,23 @@
+Host *.github.com
+	IdentityFile ~/.ssh/github_rsa
+
+Host *.local
+	ControlPath ~/.ssh/sock/%r@%h:%p 
+	ControlMaster auto 
+	Protocol 2
+	NoHostAuthenticationForLocalhost yes
+	CheckHostIP no     
+
+Host 192.168.122.?
+	ControlPath ~/.ssh/sock/%r@%h:%p 
+	ControlMaster auto 
+	Protocol 2
+	NoHostAuthenticationForLocalhost yes
+	CheckHostIP no     
+
+
+Host *
+	ControlPath ~/.ssh/sock/%r@%h:%p 
+	ControlMaster auto 
+	Protocol 2
+	NoHostAuthenticationForLocalhost yes
