@@ -56,7 +56,7 @@ PLAY2_HOME=$HOME/Development/play
 
 export JAVA_HOME PLAY2_HOME
 
-PATH=/usr/local/bin:$PATH:$PLAY2_HOME
+PATH=/usr/local/bin:/usr/local/sbin:$PATH:$PLAY2_HOME:/usr/local/share/git-core/contrib/diff-highlight
 
 # Python settings
 
