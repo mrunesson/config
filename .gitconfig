@@ -28,3 +28,17 @@
 	diff = diff-highlight | less
 [interactive]
 	diffFilter = diff-highlight
+
+[alias]
+	# Fetch-Rebase: pure AWESOMEness.
+	# Fetches 'origin' and rebases the current branch on top of origin/master.
+	# Uses 'stash' intelligently to avoid blocking on trivial working-dir changes
+	frb = "! \
+	  git fetch; \
+  	  if git diff-index --quiet --ignore-submodules HEAD --; then \
+	    git rebase origin/master \"$@\"; \
+          else \
+            git stash save -q 'Fetch-Rebase Stashed Changes'; \
+            git rebase origin/master \"$@\"; \
+            git stash pop -q; \
+          fi; true"	
