@@ -1,3 +1,6 @@
+[include]
+	# For username / creds / etc
+	path = ~/.gitconfig.local
 [user]
 	name = Magnus Runesson
 	email = M.Runesson@gmail.com
@@ -12,9 +15,6 @@
 	trustExitCode = true
 [push]
 	default = simple
-[github]
-	user = mrunesson
-	token = XXXXXXXXXXXXXXXXXXXXXXXXXXX
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
