@@ -68,11 +68,11 @@ export PIP_REQUIRE_VIRTUALENV=true
 if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
     export GPG_AGENT_INFO
 else
-    eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+    type gpg-agent >/dev/null 2>&1 && eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
 fi
 
 
 # DOCKER
 
-eval $(docker-machine env dev)
+docker-machine ls -q | grep -q dev && eval $(docker-machine env dev)
 alias docker-env='eval $(docker-machine env dev)'
