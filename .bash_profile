@@ -49,7 +49,7 @@ alias TZ-STH=TZ=/usr/share/zoneinfo/Europe/Stockholm
 # Java settings
 alias JAVA_7=JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 alias JAVA_8=JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-alias JAVA_9=JAVA_HOME=$(/usr/libexec/java_home -v 1.9)
+alias JAVA_9=JAVA_HOME=$(/usr/libexec/java_home -v 9)
 
 JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 PLAY2_HOME=$HOME/Development/play
@@ -76,3 +76,7 @@ fi
 
 docker-machine ls -q | grep -q dev && eval $(docker-machine env dev)
 alias docker-env='eval $(docker-machine env dev)'
+
+
+# SSH-agent
+eval "$(ssh-agent -s)"
