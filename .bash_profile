@@ -79,4 +79,5 @@ alias docker-env='eval $(docker-machine env dev)'
 
 
 # SSH-agent
-eval "$(ssh-agent -s)"
+eval "$(ssh-agent)"
+ssh-add -A
