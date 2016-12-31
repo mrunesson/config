@@ -1,6 +1,3 @@
-[include]
-	# For username / creds / etc
-	path = ~/.gitconfig.local
 [user]
 	name = Magnus Runesson
 	email = M.Runesson@gmail.com
@@ -42,3 +39,17 @@
             git rebase origin/master \"$@\"; \
             git stash pop -q; \
           fi; true"	
+
+	frb-dev = "! \
+	  git fetch; \
+  	  if git diff-index --quiet --ignore-submodules HEAD --; then \
+	    git rebase origin/development \"$@\"; \
+          else \
+            git stash save -q 'Fetch-Rebase Stashed Changes'; \
+            git rebase origin/development \"$@\"; \
+            git stash pop -q; \
+          fi; true"	
+
+[include]
+	# For username / creds / etc
+	path = ~/.gitconfig.local
