@@ -64,11 +64,10 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 # GPG
 
-[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
 if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
     export GPG_AGENT_INFO
 else
-    type gpg-agent >/dev/null 2>&1 && eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+    type gpg-agent >/dev/null 2>&1 && eval $( gpg-agent --daemon )
 fi
 
 
