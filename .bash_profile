@@ -50,13 +50,13 @@ alias TZ-STH=TZ=/usr/share/zoneinfo/Europe/Stockholm
 alias JAVA_7=JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 alias JAVA_8=JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 alias JAVA_9=JAVA_HOME=$(/usr/libexec/java_home -v 9)
+alias JAVA_10=JAVA_HOME=$(/usr/libexec/java_home -v 10)
 
-JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-PLAY2_HOME=$HOME/Development/play
+JAVA_HOME=$(/usr/libexec/java_home -v 10)
 
-export JAVA_HOME PLAY2_HOME
+export JAVA_HOME
 
-PATH=/usr/local/bin:/usr/local/sbin:$PATH:$PLAY2_HOME:/usr/local/share/git-core/contrib/diff-highlight
+PATH=/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/share/git-core/contrib/diff-highlight:~/bin
 
 # Python settings
 
@@ -73,10 +73,15 @@ fi
 
 # DOCKER
 
-docker-machine ls -q | grep -q dev && eval $(docker-machine env dev)
-alias docker-env='eval $(docker-machine env dev)'
+#docker-machine ls -q | grep -q dev && eval $(docker-machine env dev)
+#alias docker-env='eval $(docker-machine env dev)'
 
 
 # SSH-agent
 eval "$(ssh-agent)"
 ssh-add -A
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+source <(kubectl completion bash)
+
