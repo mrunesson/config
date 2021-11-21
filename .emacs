@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -14,6 +13,8 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 (autoload 'lyskom "lyskom" "Start LysKOM" t)
 (defvar kom-server-aliases
                     '(("kom.lysator.liu.se" . "LysKOM")))
+
