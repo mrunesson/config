@@ -134,5 +134,5 @@ fi
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/magru/.lmstudio/bin"
-# End of LM Studio CLI section
+export PATH="/Users/magru/.local/bin:$PATH"
 
